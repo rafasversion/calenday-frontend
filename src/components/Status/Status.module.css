@@ -1,0 +1,116 @@
+.status {
+  margin: 0;
+  padding: 0;
+}
+
+.statusHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.statusTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0;
+}
+
+.statusActions {
+  display: flex;
+  align-items: center;
+}
+
+.statusButton {
+  background: none;
+  border: none;
+  margin-left: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.statusCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: var(--secondary);
+}
+
+.statusHeading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0;
+}
+
+.statusNumber {
+  font-family: serif;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: end;
+}
+
+@media (max-width: 1100px) {
+  .statusCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .status {
+    margin: 0 20px;
+  }
+
+  .statusHeader {
+    margin-top: 40px;
+  }
+
+  .statusTitle {
+    font-size: 24px;
+  }
+
+  .statusCards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .statusCard {
+    min-height: 110px;
+  }
+
+  .statusNumber {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 768px) {
+  .status {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 0 45px;
+  }
+
+  .statusHeader {
+    margin-top: 76px;
+  }
+}

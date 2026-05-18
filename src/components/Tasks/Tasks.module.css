@@ -1,0 +1,614 @@
+.tasks {
+  margin: 0;
+  padding: 0;
+}
+
+.tasksHeader {
+  display: block;
+  margin-top: 36px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cdcdcd;
+  width: 100%;
+}
+
+.tasksTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0;
+}
+
+.tasksFilter {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.filterHeader {
+  display: flex;
+  background: var(--secondary);
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterButtonAdd {
+  background: var(--primary);
+  width: 205px;
+  height: 32px;
+  color: var(--bg-main);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.filterButtonAdd:hover {
+  opacity: 0.88;
+}
+
+.tableFilter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 9px;
+  color: #888;
+  pointer-events: none;
+}
+
+.filterText {
+  height: 32px;
+  border: 1px solid #b0b0b0;
+  background: none;
+  border-radius: 4px;
+  padding: 0 10px 0 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #333;
+  width: 180px;
+}
+
+.filterText:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.filterDate {
+  position: relative;
+}
+
+.dateInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dateIcon {
+  position: absolute;
+  left: 9px;
+  color: #888;
+  pointer-events: none;
+}
+
+.filterDateInput {
+  height: 32px;
+  border: 1px solid #b0b0b0;
+  color: #333;
+  background: transparent;
+  border-radius: 4px;
+  padding: 0 10px 0 30px;
+  width: 190px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  caret-color: transparent;
+}
+
+.filterDateInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.filterDateRange {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 200;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.dateInputsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #666;
+}
+
+.dateInputsGroup label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: -2px;
+}
+
+.dateInputsGroup input {
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.applyDateBtn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: opacity 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+.applyDateBtn:hover {
+  opacity: 0.9;
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 8px;
+  color: #888;
+  pointer-events: none;
+}
+
+.filterSelect {
+  height: 32px;
+  border: 1px solid #b0b0b0;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0 28px 0 10px;
+  cursor: pointer;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.filterSelect option {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+}
+
+.filterButtonFilter {
+  background: none;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.filterButtonFilter:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.tasksList {
+  width: 100%;
+}
+
+.tasksTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--secondary);
+  font-family: "Poppins", sans-serif;
+}
+
+.noPaginationMargin {
+  margin-bottom: 100px;
+}
+
+.tasksTableHeader {
+  text-align: left;
+  background: rgba(142, 151, 104, 0.6);
+  text-transform: uppercase;
+  color: var(--bg-main);
+  font-weight: 400;
+}
+
+.tableHeadItem,
+.tableContentItem,
+.tasksTableActions {
+  padding: 14px 20px;
+  vertical-align: middle;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  display: table-cell;
+}
+
+.sortableContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sortable:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.tableHeadItem {
+  display: table-cell;
+}
+
+.tableRow {
+  border-bottom: 1px solid #b4b4b4;
+  transition: background 0.1s;
+}
+
+.tableRow:hover {
+  background: rgba(142, 151, 104, 0.07);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.dotRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.statusDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tableItemTag {
+  background-color: transparent;
+  color: #4a4d3a;
+  padding: 0 12px 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: default;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  height: 28px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" preserveAspectRatio="none"><path d="M15,1 L95,1 Q99,1 99,5 L99,35 Q99,39 95,39 L15,39 L1,20 Z" fill="%23c0c4ac" stroke="%23c0c4ac" stroke-width="2"/></svg>');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.tableItemTag::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.tasksTableActions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tasksTableActions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 8px;
+  color: #666;
+  transition: color 0.15s;
+}
+
+.tasksTableActions button:hover {
+  color: var(--primary);
+}
+
+.tasksTableActions button:last-child:hover {
+  color: #c90000;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 0 100px;
+  background: transparent;
+}
+
+.pageBtn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pageBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pageBtnActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff !important;
+}
+
+.pageEllipsis {
+  padding: 0 4px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.noTasksMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 1px solid #d2d0d0;
+  border-top: none;
+  color: #666;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 100px;
+  background: var(--secondary);
+}
+
+.noTasksMessage i {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.noTasksMessage p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.highlight {
+  background-color: rgba(142, 151, 104, 0.45);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+@media (max-width: 767px) {
+  .tasks {
+    margin: 0 20px;
+  }
+
+  .tasksHeader {
+    margin-top: 36px;
+  }
+
+  .filterHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filterButtonAdd {
+    width: 100%;
+    height: 38px;
+  }
+
+  .tableFilter {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .searchWrapper {
+    width: 100%;
+  }
+
+  .filterText {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filterDate {
+    width: 100%;
+  }
+
+  .dateInputWrapper {
+    width: 100%;
+  }
+
+  .filterDateInput {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filterDateRange {
+    left: 0;
+    right: 0;
+    min-width: unset;
+  }
+
+  .selectWrapper {
+    width: 100%;
+  }
+
+  .filterSelect {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .filterButtonFilter {
+    width: 100%;
+    height: 38px;
+  }
+
+  .tasksTable thead {
+    display: none;
+  }
+
+  .tasksTable,
+  .tasksTable tbody,
+  .tableRow,
+  .tableContentItem,
+  .tasksTableActions {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tableRow {
+    border: 1px solid #d0cfc9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: var(--secondary);
+  }
+
+  .tableRow:last-child {
+    border-bottom: 1px solid #d0cfc9;
+  }
+
+  .tableContentItem {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 14px;
+    border-bottom: 1px solid #ece9e4;
+  }
+
+  .tableContentItem::before {
+    content: attr(data-label);
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #999;
+    min-width: 78px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .tasksTableActions {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 14px;
+    gap: 2px;
+  }
+
+  .tasksTableActions button {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .noPaginationMargin {
+    margin-bottom: 60px;
+  }
+
+  .pagination {
+    padding: 16px 0 60px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .tasks {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 0 45px;
+  }
+
+  .tasksHeader {
+    margin-top: 76px;
+  }
+}

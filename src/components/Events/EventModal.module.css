@@ -1,0 +1,143 @@
+.colorPicker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.colorSwatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.12s,
+    border-color 0.12s;
+  outline: none;
+}
+
+.colorSwatch:hover {
+  transform: scale(1.1);
+}
+
+.colorSwatchActive {
+  border-color: #555 !important;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.eventPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  min-height: 44px;
+  margin-top: 4px;
+  border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.eventPreviewTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventPreviewLocation {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.notifyRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.notifySelect {
+  flex: 1;
+  margin-top: 0 !important;
+}
+
+.notifyTime {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #fde8e7;
+  border: 1px solid #cc7b76;
+  border-radius: 5px;
+  padding: 10px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #a04040;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 1px;
+}
+
+@media (max-width: 860px) {
+  .notifyRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .notifyTime {
+    white-space: normal;
+  }
+
+  .eventPreview {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .eventPreviewTitle,
+  .eventPreviewLocation {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 520px) {
+  .colorPicker {
+    gap: 6px;
+  }
+
+  .colorSwatch {
+    width: 24px;
+    height: 24px;
+  }
+
+  .eventPreview {
+    padding: 10px;
+  }
+
+  .eventPreviewTitle {
+    font-size: 11px;
+  }
+
+  .eventPreviewLocation {
+    font-size: 10px;
+  }
+}

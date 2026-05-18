@@ -1,0 +1,606 @@
+.calendarSection {
+  --time-gutter: 45px;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 20px 0;
+  padding: 0 0 10px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: calc(100% - 40px);
+  position: relative;
+}
+
+.sectionHeader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background: #cdcdcd;
+}
+
+.sectionTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerLeft > * {
+  color: #aaa !important;
+  width: 30px;
+  height: 30px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.createMenuWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.createBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 46px;
+  width: 100%;
+  padding: 0 16px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.18s;
+}
+
+.createBtn:hover {
+  opacity: 0.88;
+}
+
+.createMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  z-index: 300;
+  overflow: hidden;
+  max-width: 260px;
+}
+
+.createMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.createMenuItem:hover {
+  background: #f5f0ea;
+  color: var(--primary);
+}
+
+.calViewSelect {
+  height: 46px;
+  flex: 1;
+  min-width: 140px;
+  padding: 0 10px;
+  background: none;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  color: var(--primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.generalViewBtns {
+  display: flex;
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.generalViewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 46px;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  border-right: 1px solid var(--primary);
+}
+
+.generalViewBtn:last-child {
+  border-right: none;
+}
+
+.generalViewBtn:hover {
+  background: rgba(142, 151, 104, 0.12);
+}
+
+.generalViewBtnActive {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+.calendarContent {
+  background-color: var(--secondary);
+  border-radius: 4px;
+  padding: 16px 12px;
+  margin: 20px 0 40px;
+  overflow: hidden;
+}
+
+.calNavHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 10px;
+}
+
+.calNavTitle {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.dayNavLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.dayNavDate {
+  font-family: "Noto Serif JP", serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dayNavWeekday {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.navBtn:hover {
+  background: rgba(142, 151, 104, 0.15);
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+.monthWeekdayHeader {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 2px;
+  color: #888;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+.weekNameFull {
+  display: none;
+}
+
+.weekNameShort {
+  display: inline;
+}
+
+.monthDayEmpty {
+  border: 1px solid #e0dbd4;
+  background: transparent;
+  min-height: 74px;
+}
+
+.monthDay {
+  border: 1px solid #e0dbd4;
+  min-height: 74px;
+  padding: 4px;
+  cursor: default;
+  transition: background 0.12s;
+  position: relative;
+  overflow: hidden;
+}
+
+.monthDay:hover {
+  background: rgba(228, 196, 178, 0.2);
+}
+
+.monthDayToday .monthDayNumber {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monthDayNumber {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #555;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.monthDayItems {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dayTimeGridWrapper,
+.dayTimeGridScroll {
+  overflow-x: hidden !important;
+  min-width: 0 !important;
+}
+
+.monthEventChip {
+  font-family: "Poppins", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.monthTaskChip {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  padding: 1px 2px;
+  border-radius: 2px;
+  transition: background 0.1s;
+  overflow: hidden;
+}
+
+.monthTaskChip:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.monthTaskDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.monthChipText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.monthMore {
+  font-family: "Poppins", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  color: var(--primary);
+  padding-left: 2px;
+}
+
+.timeGridWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.timeGridHeaders {
+  display: grid;
+  grid-template-columns: 26px repeat(7, 1fr) !important;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.timeGridDayHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 2px;
+}
+
+.timeGridDayName {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.timeGridDayNum {
+  font-family: "Noto Serif JP", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.timeGridDayHeaderToday .timeGridDayNum {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.timeGridScroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 560px;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(142, 151, 104, 0.5) transparent;
+}
+
+.timeGrid {
+  display: grid;
+  position: relative;
+  grid-template-columns: 26px repeat(7, 1fr) !important;
+  width: 100%;
+}
+
+.timeGutterCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.hourLabel {
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 1px;
+  font-family: "Poppins", sans-serif;
+  font-size: 7px;
+  color: #aaa;
+}
+
+.dayColumn {
+  position: relative;
+  border-left: 1px solid #e0dbd4;
+  min-width: 0;
+}
+
+.hourLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(224, 219, 212, 0.7);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timeEventBlock {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  border-radius: 4px;
+  padding: 4px 5px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2;
+  border-left: 3px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.timeTaskBlock {
+  opacity: 0.95;
+}
+
+.timeBlockTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.timeBlockTime,
+.timeBlockSub {
+  font-family: "Poppins", sans-serif;
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.timeTaskChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.04);
+  margin: 2px 4px;
+  z-index: 6;
+  position: relative;
+}
+
+.timeTaskChip:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.taskDone {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.timeGridScroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeGridScroll::-webkit-scrollbar-thumb {
+  background: rgba(142, 151, 104, 0.5);
+  border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+  .calendarSection {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 0 45px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .sectionHeader {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    flex-wrap: nowrap;
+  }
+
+  .headerActions {
+    justify-content: flex-end;
+    margin-left: auto;
+    width: auto;
+    flex-wrap: nowrap;
+  }
+
+  .createBtn,
+  .calViewSelect,
+  .generalViewBtns {
+    width: auto;
+    flex: none;
+  }
+
+  .generalViewBtn {
+    width: 46px;
+  }
+
+  .weekNameFull {
+    display: inline;
+  }
+
+  .weekNameShort {
+    display: none;
+  }
+
+  .timeGridHeaders,
+  .timeGrid {
+    grid-template-columns: 50px repeat(7, 1fr) !important;
+  }
+
+  .hourLabel {
+    padding-left: 4px;
+    font-size: 8px;
+  }
+
+  .calendarContent {
+    min-height: calc(100vh - 150px);
+  }
+
+  .monthDay {
+    min-height: calc((100vh - 200px) / 6);
+  }
+
+  .monthDayEmpty {
+    min-height: calc((100vh - 300px) / 6);
+  }
+
+  .timeGridScroll {
+    max-height: calc(100vh - 200px);
+  }
+}

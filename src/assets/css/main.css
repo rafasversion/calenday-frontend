@@ -1,0 +1,104 @@
+:root {
+  --bg-main: #fbf1e8;
+  --bg-card: #f9e9da;
+  --primary: #8e9768;
+  --secondary: #f9e9da;
+  --high: #c90000;
+  --mid: #e49310;
+  --low: #8e9768;
+  --text: #3f3f3f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fbf1e8;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.container {
+  margin: 0px 45px 0px 140px;
+}
